@@ -1,0 +1,29 @@
+library IEEE;[cite: 3]
+
+use IEEE.STD_LOGIC_1164.ALL;[cite: 3]
+
+use IEEE.STD_LOGIC_UNSIGNED.ALL;[cite: 3]
+
+entity mux_8 to 1 is[cite: 3]
+
+port (a : in STD_LOGIC_VECTOR(7 down to 0);[cite: 3]
+sel : in STD_LOGIC_VECTOR(2 down to 0); z : out STD) ;[cite: 3]
+
+end mux_8 to 1 ;[cite: 3]
+
+architecture behavioral of mux_8 to 1 is[cite: 3]
+begin[cite: 3]
+process (sel)[cite: 3]
+begin[cite: 3]
+    case sel is[cite: 3]
+        when “000” => z<=a(0);[cite: 3]
+        when “001” => z<=a(1);[cite: 3]
+        when “010” => z<=a(2);[cite: 3]
+        when “011” => z<=a(3);[cite: 3]
+        when “100” => z<=a(4);[cite: 3]
+        when “101” => z<=a(5);[cite: 3]
+        when “110” => z<=a(6);[cite: 3]
+        when others => z<=a(7);[cite: 3]
+    end case;[cite: 3]
+end process;[cite: 3]
+end behavioral;[cite: 3]
