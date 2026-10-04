@@ -1,0 +1,32 @@
+1:8 dmux
+library IEEE;[cite: 5]
+
+use IEEE.STD_LOGIC_1164.ALL;[cite: 5]
+
+use IEEE.STD_LOGIC_UNSIGNED.ALL;[cite: 5]
+
+entity Dmux_1 to8 is[cite: 5]
+
+port (a : in STD_LOGIC;[cite: 5]
+sel : in STD_LOGIC_VECTOR(2 down to 0);[cite: 5]
+z : out STD_LOGIC_VECTOR(7 down to 0)) ;[cite: 5]
+
+end Dmux_1 to8;[cite: 5]
+
+architecture behavioral of Dmux_1 to8 is[cite: 5]
+begin[cite: 5]
+
+process (sel)[cite: 5]
+begin[cite: 5]
+    case sel is[cite: 5]
+        when “000” => z(0)<=a;[cite: 5]
+        when “001” => z(1)<=a;[cite: 5]
+        when “010” => z(2)<=a;[cite: 5]
+        when “011” => z(3)<=a;[cite: 5]
+        when “100” => z(4)<=a;[cite: 5]
+        when “101” => z(5)<=a;[cite: 5]
+        when “110” => z(6)<=a;[cite: 5]
+        when others => z(7)<=a;[cite: 5]
+    end case;[cite: 5]
+end process;[cite: 5]
+end behavioral;[cite: 5]
