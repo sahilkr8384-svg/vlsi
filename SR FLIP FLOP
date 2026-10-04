@@ -1,0 +1,37 @@
+library IEEE;[cite: 9]
+
+use IEEE.STD_LOGIC_1164.ALL;[cite: 9]
+
+use IEEE.STD_LOGIC_UNSIGNED.ALL;[cite: 9]
+
+entity sr_flip_flop is[cite: 9]
+    port([cite: 9]
+        s : in STD_LOGIC;[cite: 9]
+        r : in STD_LOGIC;[cite: 9]
+        clk : in STD_LOGIC;[cite: 9]
+        reset : in STD_LOGIC;[cite: 9]
+        q : out STD_LOGIC;[cite: 9]
+        qb : out STD_LOGIC[cite: 9]
+    );[cite: 9]
+end sr_flip_flop;[cite: 9]
+
+architecture sr_flip_flop_arc of sr_flip_flop is[cite: 9]
+begin[cite: 9]
+
+    srff : process (s,r,clk,reset) is[cite: 9]
+    begin[cite: 9]
+        if(reset='1') then[cite: 9]
+            q <= '0';[cite: 9]
+            qb<= '1';[cite: 9]
+        elsif(rising_edge (clk)) then[cite: 9]
+            if (s/=r) then[cite: 9]
+                q <= s;[cite: 9]
+                qb<= r;[cite: 9]
+            elsif (s='1' and r='1') then[cite: 9]
+                q <= 'Z';[cite: 9]
+                qb<= 'Z';[cite: 9]
+            end if;[cite: 9]
+        end if;[cite: 9]
+    end process srff;[cite: 9]
+
+end sr_flip_flop_arc;[cite: 9]
