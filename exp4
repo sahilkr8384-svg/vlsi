@@ -1,0 +1,29 @@
+3:8 decoder
+library IEEE;[cite: 4]
+
+use IEEE.STD_LOGIC_1164.ALL;[cite: 4]
+
+use IEEE.STD_LOGIC_UNSIGNED.ALL;[cite: 4]
+
+entity decode is[cite: 4]
+
+port (a : in STD_LOGIC_LOGIC;[cite: 4]
+      b : in STD_LOGIC_LOGIC;[cite: 4]
+      c : in STD_LOGIC_LOGIC;[cite: 4]
+      Y : out STD_LOGIC_VECTOR(7 down to 0)) ;[cite: 4]
+
+end decode ;[cite: 4]
+
+architecture behavioral of decode is[cite: 4]
+
+begin[cite: 4]
+
+Y(0)<=(not a) and (not b) and (not c);[cite: 4]
+Y(1)<=(not a) and (not b) and c;[cite: 4]
+Y(2)<=(not a) and b and (not c);[cite: 4]
+Y(3)<=(not a) and band c;[cite: 4]
+Y(4)<= a and (not b) and (not c);[cite: 4]
+Y(5)<= a and (not b) and c;[cite: 4]
+Y(6)<= a and b and (not c);[cite: 4]
+Y(7)<= a and b and c;[cite: 4]
+end behavioral;[cite: 4]
