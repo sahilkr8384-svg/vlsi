@@ -1,0 +1,37 @@
+library IEEE;[cite: 7]
+
+use IEEE.STD_LOGIC_1164.ALL;[cite: 7]
+
+use IEEE.STD_LOGIC_UNSIGNED.ALL;[cite: 7]
+
+entity jk_flip_flop is[cite: 7]
+    port([cite: 7]
+        j : in STD_LOGIC;[cite: 7]
+        k : in STD_LOGIC;[cite: 7]
+        clk : in STD_LOGIC;[cite: 7]
+        reset : in STD_LOGIC;[cite: 7]
+        q : out STD_LOGIC;[cite: 7]
+        qb : out STD_LOGIC[cite: 7]
+    );[cite: 7]
+end jk_flip_flop;[cite: 7]
+
+architecture jk_flip_flop_arc of jk_flip_flop is[cite: 7]
+begin[cite: 7]
+
+    jkff : process (j,k,clk,reset) is[cite: 7]
+    variable m : std_logic := '0';[cite: 7]
+    begin[cite: 7]
+        if (reset='1') then[cite: 7]
+            m := '0';[cite: 7]
+        elsif (rising_edge (clk)) then[cite: 7]
+            if (j/=k) then[cite: 7]
+                m := j;[cite: 7]
+            elsif (j='1' and k='1') then[cite: 7]
+                m := not m;[cite: 7]
+            end if;[cite: 7]
+        end if;[cite: 7]
+        q <= m;[cite: 7]
+        qb<= not m;[cite: 7]
+    end process jkff;[cite: 7]
+
+end jk_flip_flop_arc;[cite: 7]
