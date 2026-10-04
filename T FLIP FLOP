@@ -1,0 +1,32 @@
+library IEEE;[cite: 10]
+
+use IEEE.STD_LOGIC_1164.ALL;[cite: 10]
+
+use IEEE.STD_LOGIC_UNSIGNED.ALL;[cite: 10]
+
+entity Toggle_flip_flop is[cite: 10]
+    port([cite: 10]
+        t : in STD_LOGIC;[cite: 10]
+        clk : in STD_LOGIC;[cite: 10]
+        reset : in STD_LOGIC;[cite: 10]
+        dout : out STD_LOGIC[cite: 10]
+    );[cite: 10]
+end Toggle_flip_flop;[cite: 10]
+
+architecture toggle_flip_flop_arc of Toggle_flip_flop is[cite: 10]
+begin[cite: 10]
+
+    tff : process (t,clk,reset) is[cite: 10]
+    variable m : std_logic := '0';[cite: 10]
+    begin[cite: 10]
+        if (reset='1') then[cite: 10]
+            m := '0';[cite: 10]
+        elsif (rising_edge (clk)) then[cite: 10]
+            if (t='1') then[cite: 10]
+                m := not m;[cite: 10]
+            end if;[cite: 10]
+        end if;[cite: 10]
+        dout<= m;[cite: 10]
+    end process tff;[cite: 10]
+
+end toggle_flip_flop_arc;[cite: 10]
