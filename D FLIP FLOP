@@ -1,0 +1,28 @@
+library IEEE;[cite: 8]
+
+use IEEE.STD_LOGIC_1164.ALL;[cite: 8]
+
+use IEEE.STD_LOGIC_UNSIGNED.ALL;[cite: 8]
+
+entity d_flip_flop is[cite: 8]
+    port([cite: 8]
+        din : in STD_LOGIC;[cite: 8]
+        clk : in STD_LOGIC;[cite: 8]
+        reset : in STD_LOGIC;[cite: 8]
+        dout : out STD_LOGIC[cite: 8]
+    );[cite: 8]
+end d_flip_flop;[cite: 8]
+
+architecture d_flip_flop_arc of d_flip_flop is[cite: 8]
+begin[cite: 8]
+
+    dff : process (din,clk,reset) is[cite: 8]
+    begin[cite: 8]
+        if (reset='1') then[cite: 8]
+            dout<= '0';[cite: 8]
+        elsif (rising_edge (clk)) then[cite: 8]
+            dout<= din;[cite: 8]
+        end if;[cite: 8]
+    end process dff;[cite: 8]
+
+end d_flip_flop_arc;[cite: 8]
