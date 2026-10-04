@@ -1,0 +1,22 @@
+B TO G converter
+library IEEE;[cite: 6]
+
+use IEEE.STD_LOGIC_1164.ALL;[cite: 6]
+
+use IEEE.STD_LOGIC_UNSIGNED.ALL;[cite: 6]
+
+entity bgc is[cite: 6]
+
+port (b : in STD_LOGIC_VECTOR(3 down to 0);[cite: 6]
+      g : out STD_LOGIC_VECTOR(3 down to 0)) ;[cite: 6]
+
+end bgc ;[cite: 6]
+
+architecture behavioral of bgc is[cite: 6]
+begin[cite: 6]
+g(3) <= b(3);[cite: 6]
+g(2) <= b(3) xor b(2);[cite: 6]
+g(1) <= b(2) xor b(1);[cite: 6]
+g(0) <= b(1) xor b(0);[cite: 6]
+
+end behavioral ;[cite: 6]
